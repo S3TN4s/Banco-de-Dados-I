@@ -1,0 +1,17 @@
+-- a
+select count(id_animal) from animais;
+
+-- b 
+select count(id_vacina) from vacinas;
+
+-- c 
+select count(id_animal) as animais,nome_tipo     from animais a
+join tipo_animais ta on ta.ID_TIPO_ANIMAL = a.ID_TIPO_ANIMAL
+group by nome_tipo;
+
+-- desc
+select count(id_vacina), nome_tipo from vacinas v
+join animais a on v.id_animal = a.id_animal
+join tipo_animais ta on ta.ID_TIPO_ANIMAL = a.ID_TIPO_ANIMAL
+group by nome_tipo
+
